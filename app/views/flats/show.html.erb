@@ -1,2 +1,15 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<div id="container">
+  <div class="card"><h2><%= @flat.name %></h2>
+    <p>Address: <%= @flat.address %></p>
+    <p>Number of guests: <%= @flat.number_of_guests %></p>
+    <p>Price per night: <%= @flat.price_per_night %></p>
+    <p>Reviews:
+      <% @flat.reviews.each do |review| %>
+        <p>Review: <%= review.content %></p>
+        <p>Rating: <%= review.rating %></p>
+      <% end %>
+    </p>
+  </div>
+  <%= link_to "add review", new_flat_review_path(@flat)  %>
+  <%= link_to "all flats", flats_path %>
+</div>

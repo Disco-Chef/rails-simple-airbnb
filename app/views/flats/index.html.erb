@@ -1,2 +1,9 @@
-<h1>Flats#index</h1>
-<p>Find me in app/views/flats/index.html.erb</p>
+<div id="container">
+  <% @flats.each do |flat| %>
+    <div class="card"><h2><%= flat.name %></h2>
+      <p>Address: <%= flat.address %></p>
+      <p>Number of guests: <%= flat.number_of_guests %></p>
+      <p>Price per night: <%= flat.price_per_night %></p>
+    </div>
+  <% end %>
+</div>
